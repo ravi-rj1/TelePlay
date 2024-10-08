@@ -1,0 +1,1038 @@
+<?php
+
+@include 'config.php';
+
+session_start();
+
+if(!isset($_SESSION['usermail'])){
+   header('location:login_form.php');
+}
+
+
+
+
+
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="../../assets/images/fav-icon.png" type="image/png">
+  <title>TelePlay</title>
+
+ <!--  css link -->
+  <link rel="stylesheet" href="../../assets/css/main.css">
+
+<!--  google font link -->
+
+  <link href="https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900" rel="stylesheet" />
+</head>
+
+<body>
+
+
+
+<!-- main container -->
+
+  <div class="container">
+
+   <!--  #HEADER SECTION -->
+
+    <header class="">
+      <div class="navbar">
+
+      
+
+        <a href="#" class="navbar-brand">
+          <img src="./assets/images/logo.png" alt="">
+        </a>
+
+        <!-- navbar navigation -->
+
+        <nav class="">
+          <ul class="navbar-nav">
+
+            <li> <a href="#" class="navbar-link">Home</a> </li>
+            <li> <a href="#category" class="navbar-link">Category</a> </li>
+            
+
+          </ul>
+        </nav>
+
+        <!-- search and sign-in -->
+
+        <div class="navbar-actions">
+
+          <form action="#" class="navbar-form">
+           <a href="Search Bar/seach.html"> <input type="text" name="search" placeholder="I'm looking for..." class="navbar-form-search">  </a> 
+
+            <button class="navbar-form-btn">
+              <ion-icon name="search-outline"></ion-icon>
+            </button>
+
+            <button class="navbar-form-close">
+              <ion-icon name="close-circle-outline"></ion-icon>
+            </button>
+          </form>
+
+
+
+
+          <!-- search button for small screen -->
+
+          <button class="navbar-search-btn">
+            <ion-icon name="search-outline"></ion-icon>
+          </button>
+
+          <a href=""  class="navbar-signin">
+            
+          <strong><span><?php echo $_SESSION['usermail']; ?></span></strong><br> </p>
+            <a href="Login/logout.php" class="btn">logout</a>
+            <ion-icon name="log-out-outline"></ion-icon>
+          </a>
+
+        </div>
+
+      </div>
+    </header>
+
+
+
+
+
+    <!-- MAIN SECTION -->
+    <main>
+
+      <!-- #BANNER SECTION -->
+      <section class="banner">
+        <div class="banner-card">
+
+          <img src="../../assets/images/oppenheimer.jpg" class="banner-img" alt="">
+
+          <div class="card-content">
+            <a href="../../Movie Details/oppenheimer.html"> <h2 class="card-title"> Oppenheimer </h2> </a>
+            <div class="card-info">
+
+              <div class="genre">
+
+                <ion-icon name="film"></ion-icon>
+                <span>History/Drama</span>
+              </div>
+
+              
+
+              <div class="duration">
+                <ion-icon name="time"></ion-icon>
+                <span>3h 1m</span>
+              </div>
+              <p>
+                <a href="https://youtu.be/uYPbbksJxIg" target="_blank">
+                <ion-icon name="logo-youtube"></ion-icon>            
+                <span>Watch The Trailer</span></a> 
+               </p>
+            </div>
+
+            
+          </div>
+           
+
+        </div>
+      </section>
+
+
+
+
+
+      <!-- MOVIES SECTION -->
+      <section class="movies">
+
+        <!-- filter bar -->
+        <div class="filter-bar">
+
+          <div class="filter-dropdowns">
+
+            <select name="genre" class="genre">
+              <option value="all genres">All genres</option>
+              <option value="action">Action</option>
+              <option value="adventure">Adventure</option>
+              <option value="horror">Horror</option>
+              <option value="animation">Animation</option>
+              <option value="biography">Biography</option>
+              <option value="bollywood">Bollywood</option>
+            </select>
+
+            <select name="year" class="year">
+              <option value="all years">All the years</option>
+              <option value="2022">2022</option>
+              <option value="2020-2021">2020-2021</option>
+              <option value="2010-2019">2010-2019</option>
+              <option value="2000-2009">2000-2009</option>
+              <option value="1980-1999">1980-1999</option>
+            </select>
+
+          </div>
+
+          <div class="filter-radios">
+
+            <input type="radio" name="grade" id="featured" checked>
+            <label for="featured">Featured</label>
+
+            <input type="radio" name="grade" id="popular">
+            <label for="popular">Popular</label>
+
+            <input type="radio" name="grade" id="newest">
+            <label for="newest">Newest</label>
+
+            <div class="checked-radio-bg"></div>
+
+          </div>
+
+        </div>
+
+
+        <!-- movies grid -->
+
+        <div class="movies-grid">
+
+          <div class="movie-card">
+
+            <div class="card-head">
+              <img src="../../assets/images/movies/oppenheimer.jpg" alt="" class="card-img">
+
+              <div class="card-overlay">
+
+               
+                <div class="rating">
+                  <ion-icon name="star-outline"></ion-icon>
+                  <span>6.4</span>
+                </div>
+
+                <div class="play">
+                  <a href="https://youtu.be/uYPbbksJxIg" target="_blank">
+                  <ion-icon name="play-circle-outline"></ion-icon>
+                  <span>Watch Trailer</span></a>
+                </div>
+
+              </div>
+            </div>
+
+            <div class="card-body">
+             <a href="Movie Details/oppenheimer.html"> <h3 class="card-title">Oppenheimer</h3></a>
+
+              <div class="card-info">
+                <span class="genre">History/Drama</span>
+                <span class="year">2023</span>
+              </div>
+            </div>
+
+          </div>
+          <!-- Red Notice -->
+          <div class="movie-card">
+
+            <div class="card-head">
+              <img src="../../assets/images/movies/red-notice.jpg" alt="" class="card-img">
+
+              <div class="card-overlay">
+
+               
+                <div class="rating">
+                  <ion-icon name="star-outline"></ion-icon>
+                  <span>6.4</span>
+                </div>
+
+                <div class="play">
+                  <a href="https://www.youtube.com/watch?v=Pj0wz7zu3Ms" target="_blank">
+                  <ion-icon name="play-circle-outline"></ion-icon>
+                  <span>Watch Trailer</span></a>
+                </div>
+
+              </div>
+            </div>
+
+            <div class="card-body">
+             <a href="../../Movie Details/Red_notice.html"> <h3 class="card-title">Red Notice</h3></a>
+
+              <div class="card-info">
+                <span class="genre">Action/Comedy</span>
+                <span class="year">2021</span>
+              </div>
+            </div>
+
+          </div>
+          <!--Spider man - Homecoming-->
+          <div class="movie-card">
+
+            <div class="card-head">
+              <img src="../../assets/images/movies/spider-men.jpg" alt="" class="card-img">
+
+              <div class="card-overlay">
+
+              
+                <div class="rating">
+                  <ion-icon name="star-outline"></ion-icon>
+                  <span>7.4</span>
+                </div>
+
+                <div class="play">
+                  <a href=" " target="_blank">
+                    <ion-icon name="play-circle-outline"></ion-icon>
+                    <span>Watch Trailer</span></a>
+                </div>
+                <div class="play">
+                  <a href="https://youtu.be/rk-dF1lIbIg" target="_blank">
+                  <ion-icon name="play-circle-outline"></ion-icon>
+                  <span>Watch Trailer</span></a>
+                </div>
+
+              </div>
+            </div>
+
+            <div class="card-body">
+              <a href="Movie Details/SpiderManHomecoming.html"><h3 class="card-title">Spider-Man: Homecoming</h3></a>
+
+              <div class="card-info">
+                <span class="genre">Action/Adventure</span>
+                <span class="year">2017</span>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="movie-card">
+
+            <div class="card-head">
+              <img src="../../assets/images/movies/matrix.jpg" alt="" class="card-img">
+
+              <div class="card-overlay">
+
+                
+                <div class="rating">
+                  <ion-icon name="star-outline"></ion-icon>
+                  <span>5.7</span>
+                </div>
+
+                <div class="play">
+                  <a href="https://youtu.be/9ix7TUGVYIo" target="_blank">
+                    <ion-icon name="play-circle-outline"></ion-icon>
+                    <span>Watch Trailer</span></a>
+                </div>
+
+              </div>
+            </div>
+
+            <div class="card-body">
+             <a href="Movie Details/MatrixResurrections.html"><h3 class="card-title">The Matrix Resurrections</h3></a> 
+
+              <div class="card-info">
+                <span class="genre">Sci-fi/Action</span>
+                <span class="year">2021</span>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="movie-card">
+
+            <div class="card-head">
+              <img src="../../assets/images/movies/eternals.jpg" alt="" class="card-img">
+
+              <div class="card-overlay">
+
+                
+
+                <div class="rating">
+                  <ion-icon name="star-outline"></ion-icon>
+                  <span>6.8</span>
+                </div>
+
+                <div class="play">
+                  <a href="https://youtu.be/x_me3xsvDgk" target="_blank">
+                    <ion-icon name="play-circle-outline"></ion-icon>
+                    <span>Watch Trailer</span></a>
+                </div>
+
+              </div>
+            </div>
+
+            <div class="card-body">
+             <a href="Movie Details/eternals.html"> <h3 class="card-title">Eternals</h3></a>
+
+              <div class="card-info">
+                <span class="genre">Adventure/Action</span>
+                <span class="year">2021</span>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="movie-card">
+
+            <div class="card-head">
+              <img src="../../assets/images/movies/dune.jpg" alt="" class="card-img">
+
+              <div class="card-overlay">
+
+                
+                <div class="rating">
+                  <ion-icon name="star-outline"></ion-icon>
+                  <span>8.2</span>
+                </div>
+
+                <div class="play">
+                  <a href="https://youtu.be/n9xhJrPXop4" target="_blank">
+                    <ion-icon name="play-circle-outline"></ion-icon>
+                    <span>Watch Trailer</span></a>
+                </div>
+
+              </div>
+            </div>
+
+            <div class="card-body">
+             <a href="../../Movie Details/dune.html"> <h3 class="card-title">Dune</h3></a>
+
+              <div class="card-info">
+                <span class="genre">Sci-fi/Adventure</span>
+                <span class="year">2021</span>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="movie-card">
+
+            <div class="card-head">
+              <img src="../../assets/images/movies/1917.jpg" alt="" class="card-img">
+
+              <div class="card-overlay">
+
+               
+
+                <div class="rating">
+                  <ion-icon name="star-outline"></ion-icon>
+                  <span>8.3</span>
+                </div>
+
+                <div class="play">
+                  <a href="https://youtu.be/YqNYrYUiMfg" target="_blank">
+                    <ion-icon name="play-circle-outline"></ion-icon>
+                    <span>Watch Trailer</span></a>
+                </div>
+
+              </div>
+            </div>
+
+            <div class="card-body">
+             <a href="../../Movie Details/1917.html"> <h3 class="card-title">1917</h3></a>
+
+              <div class="card-info">
+                <span class="genre">War/Drama</span>
+                <span class="year">2019</span>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="movie-card">
+
+            <div class="card-head">
+              <img src="../../assets/images/movies/shang-chi.jpg" alt="" class="card-img">
+
+              <div class="card-overlay">
+
+               
+                <div class="rating">
+                  <ion-icon name="star-outline"></ion-icon>
+                  <span>7.6</span>
+                </div>
+
+                <div class="play">
+                  <a href="https://youtu.be/giWIr7U1deA" target="_blank">
+                    <ion-icon name="play-circle-outline"></ion-icon>
+                    <span>Watch Trailer</span></a>
+                </div>
+
+              </div>
+            </div>
+
+            <div class="card-body">
+              <a href="../../Movie Details/sangchi.html"><h3 class="card-title">Shang-Chi and The Legend of The Ten Rings</h3></a>
+
+              <div class="card-info">
+                <span class="genre">Action/Fantasy</span>
+                <span class="year">2021</span>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="movie-card">
+
+            <div class="card-head">
+              <img src="../../assets/images/movies/casino-royale.jpg" alt="" class="card-img">
+
+              <div class="card-overlay">
+
+               
+                <div class="rating">
+                  <ion-icon name="star-outline"></ion-icon>
+                  <span>8.0</span>
+                </div>
+
+                <div class="play">
+                  <a href="https://youtu.be/36mnx8dBbGE" target="_blank">
+                    <ion-icon name="play-circle-outline"></ion-icon>
+                    <span>Watch Trailer</span></a>
+                </div>
+
+              </div>
+            </div>
+
+            <div class="card-body">
+              <a href="../../Movie Details/casino_royale.html"><h3 class="card-title">Casino Royale</h3></a>
+
+              <div class="card-info">
+                <span class="genre">Action/Adventure</span>
+                <span class="year">2006</span>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="movie-card">
+
+            <div class="card-head">
+              <img src="../../assets/images/movies/dark-knight.jpg" alt="" class="card-img">
+
+              <div class="card-overlay">
+
+              
+                <div class="rating">
+                  <ion-icon name="star-outline"></ion-icon>
+                  <span>9.0</span>
+                </div>
+
+                <div class="play">
+                  <a href="https://youtu.be/EXeTwQWrcwY" target="_blank">
+                    <ion-icon name="play-circle-outline"></ion-icon>
+                    <span>Watch Trailer</span></a>
+                </div>
+
+              </div>
+            </div>
+
+            <div class="card-body">
+              <a href="Movie Details/dark_knight.html"><h3 class="card-title">The Dark Knight</h3></a>
+
+              <div class="card-info">
+                <span class="genre">Action/Adventure</span>
+                <span class="year">2008</span>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="movie-card">
+
+            <div class="card-head">
+              <img src="../../assets/images/movies/panther.jpg" alt="" class="card-img">
+
+              <div class="card-overlay">
+
+               
+                <div class="rating">
+                  <ion-icon name="star-outline"></ion-icon>
+                  <span>7.3</span>
+                </div>
+
+                <div class="play">
+                  <a href="https://youtu.be/RlOB3UALvrQ" target="_blank">
+                    <ion-icon name="play-circle-outline"></ion-icon>
+                    <span>Watch Trailer</span></a>
+                </div>
+
+              </div>
+            </div>
+
+            <div class="card-body">
+             <a href="../../Movie Details/black_panther.html"> <h3 class="card-title">Black Panther</h3></a>
+
+              <div class="card-info">
+                <span class="genre">Action/Adventure</span>
+                <span class="year">2018</span>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="movie-card">
+
+            <div class="card-head">
+              <img src="../../assets/images/movies/venom.jpg" alt="" class="card-img">
+
+              <div class="card-overlay">
+
+               
+                <div class="rating">
+                  <ion-icon name="star-outline"></ion-icon>
+                  <span>6.7</span>
+                </div>
+
+                <div class="play">
+                  <a href="https://youtu.be/u9Mv98Gr5pY" target="_blank">
+                    <ion-icon name="play-circle-outline"></ion-icon>
+                    <span>Watch Trailer</span></a>
+                </div>
+
+              </div>
+            </div>
+
+            <div class="card-body">
+              <a href="../../Movie Details/venom.html"><h3 class="card-title">Venom</h3></a>
+
+              <div class="card-info">
+                <span class="genre">Action/Adventure</span>
+                <span class="year">2018</span>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="movie-card">
+
+            <div class="card-head">
+              <img src="../../assets/images/movies/LOTR.jpg" alt="" class="card-img">
+
+              <div class="card-overlay">
+
+               
+                <div class="rating">
+                  <ion-icon name="star-outline"></ion-icon>
+                  <span>8.9</span>
+                </div>
+
+                <div class="play">
+                  <a href="https://youtu.be/x8UAUAuKNcU" target="_blank">
+                    <ion-icon name="play-circle-outline"></ion-icon>
+                    <span>Watch Trailer</span></a>
+                </div>
+
+              </div>
+            </div>
+
+            <div class="card-body">
+              <a href="../../Movie Details/lotr.html"><h3 class="card-title">Lord Of The Rings: Return Of The King</h3></a>
+
+              <div class="card-info">
+                <span class="genre">Fantasy/Adventure</span>
+                <span class="year">2003</span>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="movie-card">
+
+            <div class="card-head">
+              <img src="../../assets/images/movies/saving-private-ryan.jpg" alt="" class="card-img">
+
+              <div class="card-overlay">
+
+                
+                <div class="rating">
+                  <ion-icon name="star-outline"></ion-icon>
+                  <span>8.6</span>
+                </div>
+
+                <div class="play">
+                  <a href="https://youtu.be/9CiW_DgxCnQ" target="_blank">
+                    <ion-icon name="play-circle-outline"></ion-icon>
+                    <span>Watch Trailer</span></a>
+                </div>
+
+              </div>
+            </div>
+
+            <div class="card-body">
+              <a href="../../Movie Details/SavingPrivateRyan.html"><h3 class="card-title">Saving Private Ryan</h3></a>
+
+              <div class="card-info">
+                <span class="genre">War/Action</span>
+                <span class="year">1998</span>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="movie-card">
+
+            <div class="card-head">
+              <img src="../../assets/images/movies/interstaller.jpg" alt="" class="card-img">
+
+              <div class="card-overlay">
+
+               
+                <div class="rating">
+                  <ion-icon name="star-outline"></ion-icon>
+                  <span>8.6</span>
+                </div>
+
+                <div class="play">
+                  <a href="https://youtu.be/zSWdZVtXT7E" target="_blank">
+                    <ion-icon name="play-circle-outline"></ion-icon>
+                    <span>Watch Trailer</span></a>
+                </div>
+
+              </div>
+            </div>
+
+            <div class="card-body">
+             <a href="../../Movie Details/intersteller.html"> <h3 class="card-title">Interstellar</h3></a>
+
+              <div class="card-info">
+                <span class="genre">Sci-fi/Adventure</span>
+                <span class="year">2014</span>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="movie-card">
+
+            <div class="card-head">
+              <img src="../../assets/images/movies/Uri.png" alt="" class="card-img">
+
+              <div class="card-overlay">
+
+               
+                <div class="rating">
+                  <ion-icon name="star-outline"></ion-icon>
+                  <span>8.2</span>
+                </div>
+
+                <div class="play">
+                  <a href="https://youtu.be/Cg8sbRFS3zU" target="_blank">
+                  <ion-icon name="play-circle-outline"></ion-icon></a>
+                  <span>Watch Trailer</span>
+                </div>
+
+              </div>
+            </div>
+
+            <div class="card-body">
+              <a href="Movie Details/uri.html"><h3 class="card-title">Uri: The Surgical Strike</h3></a>
+
+              <div class="card-info">
+                <span class="genre">Action/Drama/War </span>
+                <span class="year">2019</span>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="movie-card">
+
+            <div class="card-head">
+              <img src="./assets/images/movies/endgame.jpg" alt="" class="card-img">
+
+              <div class="card-overlay">
+
+                
+                <div class="rating">
+                  <ion-icon name="star-outline"></ion-icon>
+                  <span>8.4</span>
+                </div>
+
+                <div class="play">
+                  <a href="https://youtu.be/TcMBFSGVi1c" target="_blank">
+                    <ion-icon name="play-circle-outline"></ion-icon>
+                    <span>Watch Trailer</span></a>
+                </div>
+
+              </div>
+            </div>
+
+            <div class="card-body">
+             <a href="Movie Details/AvengersEndgame.html"> <h3 class="card-title">Avengers: Endgame</h3></a>
+
+              <div class="card-info">
+                <span class="genre">Action/Sci-fi</span>
+                <span class="year">2019</span>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="movie-card">
+
+            <div class="card-head">
+              <img src="./assets/images/movies/ww84.jpg" alt="" class="card-img">
+
+              <div class="card-overlay">
+
+                
+                <div class="rating">
+                  <ion-icon name="star-outline"></ion-icon>
+                  <span>5.4</span>
+                </div>
+
+                <div class="play">
+                  <a href="https://youtu.be/sfM7_JLk-84" target="_blank">
+                    <ion-icon name="play-circle-outline"></ion-icon>
+                    <span>Watch Trailer</span></a>
+                </div>
+
+              </div>
+            </div>
+
+            <div class="card-body">
+              <a href="Movie Details/wonderwoman.html"><h3 class="card-title">Wonder Woman 1984</h3></a>
+
+              <div class="card-info">
+                <span class="genre">Action/Adventure</span>
+                <span class="year">2020</span>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="movie-card">
+
+            <div class="card-head">
+              <img src="./assets/images/movies/captain-marvel.jpg" alt="" class="card-img">
+
+              <div class="card-overlay">
+
+               
+                <div class="rating">
+                  <ion-icon name="star-outline"></ion-icon>
+                  <span>6.8</span>
+                </div>
+
+                <div class="play">
+                  <a href="https://youtu.be/Z1BCujX3pw8" target="_blank">
+                    <ion-icon name="play-circle-outline"></ion-icon>
+                    <span>Watch Trailer</span></a>
+                </div>
+
+              </div>
+            </div>
+
+            <div class="card-body">
+              <a href="Movie Details/captainmarvel.html"><h3 class="card-title">Captain Marvel</h3></a>
+
+              <div class="card-info">
+                <span class="genre">Action/Sci-fi</span>
+                <span class="year">2019</span>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="movie-card">
+
+            <div class="card-head">
+              <img src="./assets/images/movies/Thursday.jpg" alt="" class="card-img">
+
+              <div class="card-overlay">
+
+               
+                <div class="rating">
+                  <ion-icon name="star-outline"></ion-icon>
+                  <span>7.7</span>
+                </div>
+
+                <div class="play">
+                  <a href="https://youtu.be/7O_96yftBRc" target="_blank">
+                    <ion-icon name="play-circle-outline"></ion-icon>
+                    <span>Watch Trailer</span></a>
+                </div>
+                
+
+              </div>
+            </div>
+
+            <div class="card-body">
+             <a href="Movie Details/THRUSDAY.html"> <h3 class="card-title">A Thursday</h3></a>
+
+              <div class="card-info">
+                <span class="genre">Crime/Drama
+                </span>
+                <span class="year">2022</span>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- load more button -->
+
+        <button class="load-more">LOAD MORE</button>
+
+      </section>
+
+
+
+
+
+      <!-- CATEGORY SECTION -->
+
+      <section class="category" id="category">
+
+        <h2 class="section-heading">Category</h2>
+
+        <div class="category-grid">
+
+          <div class="category-card"> 
+            <a href="Category/Action.html">
+            <img src="./assets/images/action.jpg" alt="" class="card-img">
+            <div class="name">Action</div>
+          </a>
+          </div>
+
+          <div class="category-card">
+            <a href="Category/Comedy.HTML">
+            <img src="../../assets/images/comedy.jpg" alt="" class="card-img">
+            <div class="name">Comedy</div>
+          </a>
+          </div>
+
+          <div class="category-card">
+            <a href="Category/TVshows.html">
+            <img src="../../assets/images/thriller.webp" alt="" class="card-img">
+            <div class="name">Web Series</div>
+            </a>
+          </div>
+
+          <div class="category-card">
+            <a href="Category/Horror.HTML">
+            <img src="../../assets/images/horror.jpg" alt="" class="card-img">
+            <div class="name">Horror</div>
+          </a>
+          </div>
+
+          <div class="category-card">
+            <a href="Category/adventure">
+            <img src="../../assets/images/adventure.jpg" alt="" class="card-img">
+            <div class="name">Adventure</div>
+          </a>
+
+          </div>
+
+          <div class="category-card">
+            <a href="Category/Animated.html">
+            <img src="../../assets/images/animated.jpg" alt="" class="card-img">
+            <div class="name">Animated</div>
+          </a>
+          </div>
+
+          <div class="category-card">
+            <a href="Category/Crime">
+            <img src="../../assets/images/crime.jpg" alt="" class="card-img">
+            <div class="name">Crime</div>
+          </a>
+          </div>
+
+          <div class="category-card">
+            <a href="Category/Sci-fi.html">
+            <img src="../../assets/images/sci-fi.jpg" alt="" class="card-img">
+            <div class="name">SCI-FI</div>
+          </a>
+          </div>
+
+        </div>
+
+      </section>
+
+    </main>
+
+
+    <!-- FOOTER SECTION -->
+
+    <footer>
+
+      <div class="footer-content">
+
+        <div class="footer-brand">
+          <img src="../../assets/images/logo.png" alt="" class="footer-logo">
+          <p class="slogan">Movies & TV Shows, Online cinema
+            </p>
+
+
+          <div class="social-link">
+
+            <a href="https://www.facebook.com/profile.php?id=100085911518079" target="_blank">
+              <ion-icon name="logo-facebook"></ion-icon>
+            </a>
+            <a href="https://twitter.com/TelePlayvit" target="_blank">
+              <ion-icon name="logo-twitter"></ion-icon>
+            </a>
+            <a href="https://www.instagram.com/teleplay.vitb/" target="_blank">
+              <ion-icon name="logo-instagram"></ion-icon>
+            </a>
+            <a href="https://youtube.com/channel/UCe_izpv0jZrNDJljx2BW5XQ" target="_blank">
+              <ion-icon name="logo-youtube"></ion-icon>
+            </a>
+
+          </div>
+        </div>
+
+
+          <ul>
+
+            <h4 class="link-heading">Browse</h4>
+
+            <li class="link-item"><a href="../../Category/TVshows.html">TV Shows</a></li>
+            <li class="link-item"><a href="#">Movies</a></li>
+            <li class="link-item"><a href="#">Kids</a></li>
+            <li class="link-item"><a href="#">Collections</a></li>
+
+          </ul>
+
+
+          <ul>
+
+            <h4 class="link-heading">Help</h4>
+
+            <li class="link-item"><a href="#">Contact Us</a></li>
+            <li class="link-item"><a href="#">E-mail us </a></li>
+            
+
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-copyright">
+
+        <div class="copyright">
+          <p>&copy; Copyright 2022 TelePlay</p>
+        </div>
+
+        <div class="wrapper">
+          <a href="about_us.html" target="_blank">About Us</a>
+          <a href="privacy_policy.html"target="_blank">Privacy policy</a>
+          <a href="terms.html" target="_blank">Terms and conditions</a>
+        </div>
+
+      </div>
+
+    </footer>
+
+  </div>
+
+
+  
+
+  <!--
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>
